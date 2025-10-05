@@ -16,5 +16,5 @@ public partial class MainPage
         DataContext = viewModel;
     }
 
-    public MainPageViewModel ViewModel { get; private set; } = null!;
+    public MainPageViewModel ViewModel { get; }
 }
