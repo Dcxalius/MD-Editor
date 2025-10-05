@@ -4,10 +4,17 @@ namespace MyApp.Views;
 
 public partial class MainPage
 {
-    public MainPage(MainPageViewModel viewModel)
+    public MainPage()
     {
-        ViewModel = viewModel;
+        InitializeComponent();
     }
 
-    public MainPageViewModel ViewModel { get; }
+    public MainPage(MainPageViewModel viewModel)
+        : this()
+    {
+        ViewModel = viewModel;
+        DataContext = viewModel;
+    }
+
+    public MainPageViewModel ViewModel { get; private set; } = null!;
 }
