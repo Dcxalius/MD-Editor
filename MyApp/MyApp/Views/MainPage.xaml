@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="MyApp.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:MyApp.ViewModels">
+    <Grid>
+        <StackPanel Spacing="12" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Welcome" FontSize="28" HorizontalAlignment="Center" />
+            <TextBlock Text="{Binding Greeting}" FontSize="18" />
+            <TextBlock Text="{Binding CurrentTime}" />
+        </StackPanel>
+    </Grid>
+</Page>
