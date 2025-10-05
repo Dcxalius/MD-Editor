@@ -1,14 +1,16 @@
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.UI.Xaml;
 using MyApp.Services;
 using MyApp.ViewModels;
 using MyApp.Views;
 
 namespace MyApp;
 
-public partial class App
+public partial class App : Application
 {
     public App()
     {
+        InitializeComponent();
         Services = ConfigureServices();
         MainPage = Services.GetRequiredService<MainPage>();
     }
