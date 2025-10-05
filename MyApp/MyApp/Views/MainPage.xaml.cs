@@ -5,7 +5,13 @@ namespace MyApp.Views;
 
 public sealed partial class MainPage : Page
 {
+    public MainPage()
+    {
+        InitializeComponent();
+    }
+
     public MainPage(MainPageViewModel viewModel)
+        : this()
     {
         InitializeComponent();
         ViewModel = viewModel;
