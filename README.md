@@ -35,3 +35,4 @@ For questions or assistance, please open a GitHub issue so maintainers and the c
 This project is distributed under the terms of the [MIT License](LICENSE).
 
 MD-Editor is a lightweight Markdown editor designed to make drafting and previewing Markdown documents fast, simple, and distraction-free
+
