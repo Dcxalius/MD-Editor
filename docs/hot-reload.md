@@ -1,6 +1,6 @@
 # Hot Reload Workflow
 
-This guide explains how to run each MD-Editor head with XAML and C# Hot Reload so day-to-day UI work can happen without full rebuilds. The **primary development target** for Hot Reload is `MD-Editor.Windows` (WinUI). Android and Skia.Gtk heads are also covered below, along with their current limitations.
+This guide explains how to run each MyApp head with XAML and C# Hot Reload so day-to-day UI work can happen without full rebuilds. The **primary development target** for Hot Reload is `MyApp.Windows` (WinUI). Android and Skia.Gtk heads are also covered below, along with their current limitations.
 
 > **Prerequisites**
 >
@@ -10,10 +10,10 @@ This guide explains how to run each MD-Editor head with XAML and C# Hot Reload s
 
 ## 1. Enable Hot Reload in Visual Studio
 
-1. Open the solution and set **MD-Editor.Windows** as the startup project.
+1. Open the solution and set **MyApp.Windows** as the startup project.
 2. Navigate to **Tools ▸ Options ▸ Debugging ▸ Hot Reload**.
 3. Enable both **XAML Hot Reload** and **.NET/C# Hot Reload**.
-4. In the debug dropdown select **MD-Editor.Windows (Unpackaged)** or **MD-Editor.Windows (Packaged)** and ensure **Hot Reload on file save** is checked in the toolbar.
+4. In the debug dropdown select **MyApp.Windows (Unpackaged)** or **MyApp.Windows (Packaged)** and ensure **Hot Reload on file save** is checked in the toolbar.
 5. Start debugging (`F5`) or use **Hot Reload in Debugger** to launch once. Subsequent XAML edits in the shared project or the Windows head will apply immediately.
 
 ### Recommended Visual Studio workflow
@@ -27,7 +27,7 @@ This guide explains how to run each MD-Editor head with XAML and C# Hot Reload s
 For contributors working outside Visual Studio (for example on macOS or Linux) Hot Reload is available through `dotnet watch`.
 
 ```bash
-dotnet watch --project src/MD-Editor.Windows/MD-Editor.Windows.csproj --hot-reload --no-launch-profile
+dotnet watch --project MyApp.Windows/MyApp.Windows.csproj --hot-reload --no-launch-profile
 ```
 
 * The command builds the Windows head once, attaches the Hot Reload agent, and watches for XAML/C# changes.
@@ -45,24 +45,24 @@ dotnet watch --project src/MD-Editor.Windows/MD-Editor.Windows.csproj --hot-relo
 
 Record any issues in an engineering log or GitHub issue so we can track regressions.
 
-## 4. Android Head (`MD-Editor.Mobile`) Hot Reload
+## 4. Android Head (`MyApp.Android`) Hot Reload
 
 * Launch Visual Studio with the **Android** startup project or execute:
 
   ```bash
-  dotnet watch --project src/MD-Editor.Mobile/MD-Editor.Mobile.csproj --hot-reload --framework net8.0-android
+  dotnet watch --project MyApp.Android/MyApp.Android.csproj --hot-reload --framework net8.0-android
   ```
 
 * The Android tooling requires an emulator or device connected before running `dotnet watch`.
 * XAML Hot Reload supports most view changes; C# Hot Reload is limited while the app is running under the Mono runtime. Visual Studio will flag unsupported edits (for example method signature changes) and request a rebuild.
 * Expect the initial deployment to take longer because the application package must be deployed to the device. Once running, Hot Reload applies most UI tweaks without reinstalling.
 
-## 5. Skia.Gtk Head (`MD-Editor.Skia.Gtk`) Hot Reload
+## 5. Skia.Gtk Head (`MyApp.Skia.Gtk`) Hot Reload
 
 * Start the head via:
 
   ```bash
-  dotnet watch --project src/MD-Editor.Skia.Gtk/MD-Editor.Skia.Gtk.csproj --hot-reload --framework net8.0
+  dotnet watch --project MyApp.Skia.Gtk/MyApp.Skia.Gtk.csproj --hot-reload --framework net8.0
   ```
 
 * On Linux hosts ensure GTK 3 and WebKitGTK packages are installed. On macOS install them via Homebrew prior to running the command.
@@ -73,14 +73,14 @@ Record any issues in an engineering log or GitHub issue so we can track regressi
 
 * **Large refactors** (adding/removing `x:Name`, modifying resource dictionaries) may require a rebuild on all heads.
 * **Android**: When using `dotnet watch`, keep `adb logcat` open. If the app disconnects, stop and re-run the watch command so the Mono runtime reattaches Hot Reload.
-* **Skia.Gtk**: GTK windows launched via `dotnet watch` may stay resident after closing. Kill the process (`pkill -f MD-Editor.Skia.Gtk`) before starting a new session.
+* **Skia.Gtk**: GTK windows launched via `dotnet watch` may stay resident after closing. Kill the process (`pkill -f MyApp.Skia.Gtk`) before starting a new session.
 * **Primary target unavailable**: If you cannot run the Windows head locally (e.g., working from macOS), configure a Windows VM or Dev Box and forward your repo via source control syncing.
 
 ## 7. Capturing configuration for PRs
 
 When validating changes, record:
 
-* The head (`MD-Editor.Windows`, `MD-Editor.Mobile`, or `MD-Editor.Skia.Gtk`).
+* The head (`MyApp.Windows`, `MyApp.Android`, or `MyApp.Skia.Gtk`).
 * Command or launch profile used.
 * Whether Hot Reload succeeded for XAML and/or C# edits.
 * Any failures or required rebuilds.
@@ -90,7 +90,7 @@ Include these notes in pull request descriptions so reviewers can reproduce the 
 ## Appendix: IDE Checklist
 
 * ✔ Enable XAML + C# Hot Reload in Visual Studio options.
-* ✔ Confirm **MD-Editor.Windows** is set as the primary startup project.
+* ✔ Confirm **MyApp.Windows** is set as the primary startup project.
 * ✔ Verify `dotnet watch --hot-reload` is available (run `dotnet watch --version`).
 * ✔ Keep diagnostics windows open (Hot Reload output, Live Visual Tree, Android Device Log).
 
