@@ -22,6 +22,10 @@ Additional modes or advanced workflows have not been supplied by the user.
 ## Troubleshooting & FAQ
 
 No user-provided troubleshooting tips or frequently asked questions are available yet.
+
+### Hot Reload Workflow
+
+MD-Editor targets multiple heads (Windows, Android, Skia.Gtk). We use the Windows head as the primary Hot Reload target. See [docs/hot-reload.md](docs/hot-reload.md) for setup guidance, validated launch commands, and platform-specific notes.
 ## Overview
 MD-Editor is a markdown-focused editing project. This repository will grow to include the core editor implementation, supporting assets, and documentation so contributors can help shape the experience.
 
