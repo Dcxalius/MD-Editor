@@ -1,0 +1,13 @@
+C:\Users\Dcxalius\source\repos\Dcxalius\MD-Editor\MyApp\MyApp\bin\Debug\net8.0\MyApp.deps.json
+C:\Users\Dcxalius\source\repos\Dcxalius\MD-Editor\MyApp\MyApp\bin\Debug\net8.0\MyApp.dll
+C:\Users\Dcxalius\source\repos\Dcxalius\MD-Editor\MyApp\MyApp\bin\Debug\net8.0\MyApp.pdb
+C:\Users\Dcxalius\source\repos\Dcxalius\MD-Editor\MyApp\MyApp\obj\Debug\net8.0\MyApp.csproj.AssemblyReference.cache
+C:\Users\Dcxalius\source\repos\Dcxalius\MD-Editor\MyApp\MyApp\obj\Debug\net8.0\MyApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dcxalius\source\repos\Dcxalius\MD-Editor\MyApp\MyApp\obj\Debug\net8.0\MyApp.AssemblyInfoInputs.cache
+C:\Users\Dcxalius\source\repos\Dcxalius\MD-Editor\MyApp\MyApp\obj\Debug\net8.0\MyApp.AssemblyInfo.cs
+C:\Users\Dcxalius\source\repos\Dcxalius\MD-Editor\MyApp\MyApp\obj\Debug\net8.0\MyApp.csproj.CoreCompileInputs.cache
+C:\Users\Dcxalius\source\repos\Dcxalius\MD-Editor\MyApp\MyApp\obj\Debug\net8.0\MyApp.sourcelink.json
+C:\Users\Dcxalius\source\repos\Dcxalius\MD-Editor\MyApp\MyApp\obj\Debug\net8.0\MyApp.dll
+C:\Users\Dcxalius\source\repos\Dcxalius\MD-Editor\MyApp\MyApp\obj\Debug\net8.0\refint\MyApp.dll
+C:\Users\Dcxalius\source\repos\Dcxalius\MD-Editor\MyApp\MyApp\obj\Debug\net8.0\MyApp.pdb
+C:\Users\Dcxalius\source\repos\Dcxalius\MD-Editor\MyApp\MyApp\obj\Debug\net8.0\ref\MyApp.dll

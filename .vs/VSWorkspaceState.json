@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\MyApp",
+    "\\MyApp.Android",
+    "\\MyApp.Skia.Gtk",
+    "\\MyApp.Windows",
+    "\\MyApp.Windows\\Services"
   ],
+  "SelectedNode": "\\MyApp\\MyApp.sln",
   "PreviewInSolutionExplorer": false
 }
