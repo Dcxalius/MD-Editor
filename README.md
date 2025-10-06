@@ -36,9 +36,7 @@ Additional modes or advanced workflows have not been supplied by the user.
 
 ## Troubleshooting & FAQ
 
-### Visual Studio reports that the project cannot be started
-
-This warning appears when the shared project is selected as the startup project. In **Solution Explorer**, right-click **MyApp.Windows** (for desktop) or another head project and choose **Set as StartUp Project**. The next debug run will launch the corresponding app window described above.
+* [Testing on a Linux VM](docs/linux-vm-testing.md) – step-by-step guidance for provisioning a Linux virtual machine, installing dependencies, and running the GTK head.
 
 ### Hot Reload Workflow
 
