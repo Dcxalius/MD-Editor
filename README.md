@@ -21,7 +21,7 @@ Additional modes or advanced workflows have not been supplied by the user.
 
 ## Troubleshooting & FAQ
 
-No user-provided troubleshooting tips or frequently asked questions are available yet.
+* [Testing on a Linux VM](docs/linux-vm-testing.md) – step-by-step guidance for provisioning a Linux virtual machine, installing dependencies, and running the GTK head.
 
 ### Hot Reload Workflow
 
