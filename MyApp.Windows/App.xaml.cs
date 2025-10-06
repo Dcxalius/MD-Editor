@@ -5,7 +5,7 @@ using MyApp.Windows.Services;
 
 namespace MyApp.Windows;
 
-public partial class App : Application
+public class App : Application
 {
     protected override void OnLaunched(LaunchActivatedEventArgs args)
     {
