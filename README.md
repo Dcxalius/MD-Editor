@@ -2,14 +2,29 @@
 
 A lightweight markdown editing experience focused on speed and simplicity.
 
-## Usage
+## Quick start
 
-1. This.
-2. Is.
-3. Empty.
-4. For.
-5. Now
+```bash
+dotnet restore MyApp/MyApp.sln
+dotnet build MyApp/MyApp.sln
+```
 
+After the solution builds, Visual Studio will list four projects in **Solution Explorer**:
+
+* **MyApp** – the shared class library.
+* **MyApp.Windows** – WinUI 3 desktop head (default debugging target).
+* **MyApp.Android** – native Android head.
+* **MyApp.Skia.Gtk** – cross-platform GTK desktop head.
+
+Set one of the head projects as the startup project before debugging. Then launch it using the table below:
+
+| Platform | Launch command | Expected result |
+| --- | --- | --- |
+| Windows | Start **MyApp.Windows (Unpackaged)** from Visual Studio or run `dotnet run --project MyApp.Windows/MyApp.Windows.csproj` from an elevated Windows shell. | A 1024×768 window titled **MyApp** opens with a command bar containing **New**, **Open**, and **Save** buttons. Clicking any button writes `"<Command> document requested"` to the debug/output console. |
+| Linux/macOS | `dotnet run --project MyApp.Skia.Gtk/MyApp.Skia.Gtk.csproj` | A GTK window titled **MyApp** appears with a **File** menu that contains **New**, **Open**, **Save**, and **Exit**. Choosing a menu item prints `"<Command> document requested"` to the terminal running the app. |
+| Android | Deploy **MyApp.Android** from Visual Studio or run `dotnet build MyApp.Android/MyApp.Android.csproj -t:Run -f net8.0-android`. | The emulator/device launches a simple screen ready for further UI work. |
+
+The shared project (`MyApp/MyApp.csproj`) is a class library. Starting it directly results in the standard Visual Studio message **"A project with an Output Type of Class Library cannot be started directly"**. Always run one of the platform heads instead.
 
 ## Configuration
 
@@ -21,7 +36,9 @@ Additional modes or advanced workflows have not been supplied by the user.
 
 ## Troubleshooting & FAQ
 
-No user-provided troubleshooting tips or frequently asked questions are available yet.
+### Visual Studio reports that the project cannot be started
+
+This warning appears when the shared project is selected as the startup project. In **Solution Explorer**, right-click **MyApp.Windows** (for desktop) or another head project and choose **Set as StartUp Project**. The next debug run will launch the corresponding app window described above.
 
 ### Hot Reload Workflow
 
